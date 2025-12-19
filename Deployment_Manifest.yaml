@@ -5,7 +5,7 @@ metadata:
   labels:
     app: web
 spec:
-  replica: 1
+  replica: 2
   selector:
     matchLabels:
       app: nginx
@@ -22,3 +22,5 @@ spec:
 
         # Labels = identity (Labels are key–value pairs attached to Kubernetes objects (Pods, Services, Deployments, etc.)).
         # Selectors = matching logic (Selectors are used to select resources based on labels).
+
+        # Deploying nginx application with having 2 replicas in K8s cluster
