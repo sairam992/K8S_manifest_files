@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-deployment
+  labels:
+    app: web
+spec:
+  replica: 1
+  selector:
+    matchLabels:
+      app: nginx
+  template:
+    metadata:
+      labels:
+        app: web
+      spec:
+      containers:
+      - name: nginx
+        image: nginx:1.4.20
+        ports:
+        - containerport: 80
+
+        # Labels = identity (Labels are key–value pairs attached to Kubernetes objects (Pods, Services, Deployments, etc.)).
+        # Selectors = matching logic (Selectors are used to select resources based on labels).
